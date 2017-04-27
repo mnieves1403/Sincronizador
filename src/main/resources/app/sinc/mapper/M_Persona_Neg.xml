@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="M_Persona_Neg">
+ 
+<!--     <resultMap id="result" type="Configuracion"> -->
+<!--         <result property="id_tabla_config" column="ID_TABLA_CONFIG"/> -->
+<!--         <result property="cod_config" column="COD_CONFIG"/>    -->
+<!--         <result property="dsc_valor" column="DSC_VALOR"/> -->
+<!--         <result property="usr_ult_mod" column="USR_ULT_MOD"/> -->
+<!--         <result property="fec_ult_mod" column="FEC_ULT_MOD"/> -->
+<!--     </resultMap> -->
+    
+    <resultMap id="resultTListaNegativa" type="TListaNegativa">
+        <result property="listanegativaid" column="ID_LISTA"/>
+        <result property="nombre_persona" column="DSC_NOMB_COMP"/>   
+        <result property="clista" column="DSC_NOM_CORTO"/>
+    </resultMap>
+ 
+    <select id="selectAll" resultMap="resultTListaNegativa">
+        SELECT p.DSC_NOMB_COMP as DSC_NOMB_COMP, l.DSC_NOM_CORTO as DSC_NOM_CORTO from m_persona_neg p inner join m_lista l on (p.ID_LISTA=l.ID_LISTA)
+    </select>
+    
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Configuracion">
+ 
+    <resultMap id="result" type="Configuracion">
+        <result property="id_tabla_config" column="ID_TABLA_CONFIG"/>
+        <result property="cod_config" column="COD_CONFIG"/>   
+        <result property="dsc_valor" column="DSC_VALOR"/>
+        <result property="usr_ult_mod" column="USR_ULT_MOD"/>
+        <result property="fec_ult_mod" column="FEC_ULT_MOD"/>
+    </resultMap>
+ 
+    <select id="selectAll" resultMap="result">
+        SELECT * FROM p_config;
+    </select>
+ 
+    <select id="selectById" parameterType="int" resultMap="result">
+        SELECT * FROM p_config WHERE id_tabla_config = #{id}
+    </select>
+ 
+    <insert id="insert" parameterType="Configuracion" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO p_config (id_tabla_config,cod_config, dsc_valor, usr_ult_mod) VALUES (#{id_tabla_config},#{cod_config}, #{dsc_valor}, #{usr_ult_mod});
+    </insert>
+ 
+    <update id="update" parameterType="Configuracion">
+        UPDATE p_config
+        SET dsc_valor = #{dsc_valor}
+        WHERE id_tabla_config = #{id_tabla_config} 
+    </update>
+ 
+    <delete id="delete" parameterType="int">
+        DELETE from p_config WHERE id_tabla_config = #{id_tabla_config}
+    </delete>
+</mapper>

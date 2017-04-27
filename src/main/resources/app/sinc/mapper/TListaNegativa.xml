@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="TListaNegativa">
+ 
+    <resultMap id="result" type="TListaNegativa">
+        <result property="listanegativaid" column="LISTANEGATIVAID"/>
+        <result property="nombre_persona" column="NOMBRE_PERSONA"/>   
+        <result property="clista" column="CLISTA"/>
+    </resultMap>
+  
+    <insert id="insert" parameterType="TListaNegativa" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tlistanegativa (listanegativaid, nombre_persona, clista) VALUES (#{listanegativaid},#{nombre_persona}, #{clista});
+    </insert>
+	
+</mapper>
