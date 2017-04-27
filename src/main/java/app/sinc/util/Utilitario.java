@@ -7,6 +7,7 @@ import java.util.Properties;
 
 /**
  * @author mnieves
+ * @version 0.1
  *
  */
 public class Utilitario {
