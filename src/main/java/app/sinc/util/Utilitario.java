@@ -14,6 +14,11 @@ public class Utilitario {
 
 	private static Properties prop = null;
 	
+	/**
+	 * @author mnieves
+	 * @param ruta
+	 * @return
+	 */
 	public static Properties readProperties(String ruta){
 		
 		prop = new Properties();
