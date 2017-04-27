@@ -16,6 +16,7 @@ public class Utilitario {
 	
 	/**
 	 * @author mnieves
+	 * @since 27.04.2017
 	 * @param ruta
 	 * @return
 	 */
