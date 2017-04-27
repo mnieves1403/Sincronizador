@@ -8,6 +8,7 @@ import java.util.Properties;
 /**
  * @author mnieves
  * @version 0.1
+ * @since 27.04.2017
  *
  */
 public class Utilitario {
